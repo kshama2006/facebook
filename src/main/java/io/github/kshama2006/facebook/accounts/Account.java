@@ -1,40 +1,20 @@
-package io.github.kshama2006.facebook;
+package io.github.kshama2006.facebook.accounts;
 
 import java.util.Objects;
 
 public class Account {
-    private String name;
     private Long id;
+    private String name;
     private String chat;
     private String call;
     private String story;
     private String likes;
     private String dislikes;
-    private String profile;
     private String comments;
+    private String profile;
+
 
     public Account() {
-
-    }
-
-    public Account(Long id, String chat, String call, String story, String likes, String dislikes, String profile, String comments, String name) {
-        this.id = id;
-        this.chat = chat;
-        this.call = call;
-        this.story = story;
-        this.likes = likes;
-        this.dislikes = dislikes;
-        this.profile = profile;
-        this.comments = comments;
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Long getId() {
@@ -43,6 +23,14 @@ public class Account {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getChat() {
@@ -85,14 +73,6 @@ public class Account {
         this.dislikes = dislikes;
     }
 
-    public String getProfile() {
-        return profile;
-    }
-
-    public void setProfile(String profile) {
-        this.profile = profile;
-    }
-
     public String getComments() {
         return comments;
     }
@@ -101,31 +81,52 @@ public class Account {
         this.comments = comments;
     }
 
+    public String getProfile() {
+        return profile;
+    }
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Account account = (Account) o;
-        return Objects.equals(getName(), account.getName()) && Objects.equals(getId(), account.getId()) && Objects.equals(getChat(), account.getChat()) && Objects.equals(getCall(), account.getCall()) && Objects.equals(getStory(), account.getStory()) && Objects.equals(getLikes(), account.getLikes()) && Objects.equals(getDislikes(), account.getDislikes()) && Objects.equals(getProfile(), account.getProfile()) && Objects.equals(getComments(), account.getComments());
+        Account accounts = (Account) o;
+        return Objects.equals(getId(), accounts.getId()) && Objects.equals(getName(), accounts.getName()) && Objects.equals(getChat(), accounts.getChat()) && Objects.equals(getCall(), accounts.getCall()) && Objects.equals(getStory(), accounts.getStory()) && Objects.equals(getLikes(), accounts.getLikes()) && Objects.equals(getDislikes(), accounts.getDislikes()) && Objects.equals(getComments(), accounts.getComments()) && Objects.equals(getProfile(), accounts.getProfile());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getId(), getChat(), getCall(), getStory(), getLikes(), getDislikes(), getProfile(), getComments());
+        return Objects.hash(getId(), getName(), getChat(), getCall(), getStory(), getLikes(), getDislikes(), getComments(), getProfile());
     }
 
     @Override
     public String toString() {
-        return "Account{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
+        return "Accounts{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", chat='" + chat + '\'' +
                 ", call='" + call + '\'' +
                 ", story='" + story + '\'' +
                 ", likes='" + likes + '\'' +
                 ", dislikes='" + dislikes + '\'' +
-                ", profile='" + profile + '\'' +
                 ", comments='" + comments + '\'' +
+                ", profile='" + profile + '\'' +
                 '}';
+    }
+
+    public Account(Long id, String name, String chat, String call, String story, String likes, String dislikes, String comments, String profile) {
+        this.id = id;
+        this.name = name;
+        this.chat = chat;
+        this.call = call;
+        this.story = story;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.comments = comments;
+        this.profile = profile;
+
+
     }
 }
