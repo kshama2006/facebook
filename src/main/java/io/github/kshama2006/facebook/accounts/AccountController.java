@@ -38,8 +38,8 @@ public class AccountController {
 
     //UPDATE - PUT
     @PutMapping("/accounts")
-    public Account updateAccount(@RequestBody Account account){
-       return accountService.updateAccount(account);
+    public Account updateAccount(@RequestBody Account account) {
+        return accountService.updateAccount(account);
 
     }
 
