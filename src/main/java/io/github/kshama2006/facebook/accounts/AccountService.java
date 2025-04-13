@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Service
-public class AccountService {
+public abstract class AccountService {
     private List<Account> accountList;
 
     public AccountService() {
@@ -53,6 +53,15 @@ public class AccountService {
     }
 
 
+    public abstract Account createAccount(Account account);
+
+    public abstract List<Account> getAllAccounts();
+
+    public abstract Account getAccountById(long id);
+
+    public abstract Account updateAccountProfile(long id, String newProfile);
+
+    public abstract boolean deleteAccount(long id);
 }
 
 
